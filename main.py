@@ -38,10 +38,7 @@ results = response.json()
 
 today = datetime.now().strftime("%d/%m/%Y")
 now_time = datetime.now().strftime("%X")
-# headers = {
-#     "Authorization": "Basic VGhlZXJheXV0OnRvcGFuZHNpbg==",
-#     "Content-Type": "application/json",
-# }
+
 detail = {
      "workout": {
              "date": today,
@@ -52,9 +49,6 @@ detail = {
     }
 }
 
-# response = requests.get(url=SHEETY_ENDPOINT)
-# response.raise_for_status()
-# print(response.json())
 
 for data in results["exercises"]:
     detail["workout"]["exercise"] = data["user_input"].title()
@@ -68,7 +62,4 @@ for data in results["exercises"]:
                              )
                              )
     response.raise_for_status()
-
-# test = response.json()
-# print(test)
 
